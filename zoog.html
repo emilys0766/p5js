@@ -1,0 +1,56 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+    <title>p5js Template</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.3/p5.js"></script>
+    
+    <script>
+        function setup() {
+            createCanvas(800,600);
+        }
+
+        function draw() {
+            fill("orange");//code for orange head
+            stroke("orange")
+            ellipse(325, 250, 250, 250);
+            fill("white")//code for white snout; also makes sure that the white ellpise + orange ellipse don't overlap
+            noStroke()
+            ellipse(325, 370, 250, 250)
+            noFill();
+            stroke("orange")
+            ellipse(325, 250, 250, 250)
+            fill("black");//code for eyes + nose
+            ellipse(380, 200, 25, 25);
+            ellipse(270, 200, 25, 25);
+            ellipse(325, 255, 50, 25);
+            fill("orange");//code for ears
+            stroke("orange")
+            triangle(200, 250, 270, 137.5, 200, 65);
+            triangle(450, 250, 380, 137.5, 450, 65);
+            fill("white")
+            triangle(210, 210, 210, 95, 255, 140);
+            triangle(440, 210, 440, 95, 395, 140)
+            stroke("black")//*code for mouth
+            strokeWeight(1)
+            line(305, 320, 285, 280)
+            line(305, 320, 325, 280)
+            line(325, 280, 345, 320)
+            line(345, 320, 365, 280)
+        };
+    </script>
+</head>
+
+<body>
+    <div id="code" class="container-fluid">
+        <script src="https://gist-it.appspot.com/github/emilys0766/p5js/blob/gh-pages/zoog.html?footer=0"></script>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script>
+        $(window).bind("load", function() {
+            $('#code').before($('#defaultCanvas0').remove());
+        });
+    </script>
+</body>
