@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+    <title>p5js Template</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.3/p5.js"></script>
+    
+    <script>
+    var r;
+    var b;
+    var g;
+    var color;
+        function setup() {
+            createCanvas(800,600);
+            r = 0
+            b = 0
+            g = 0
+            color = 255 // background starts white
+        }
+
+        function draw() {
+          background(r, b, g)
+          
+            rectMode(CENTER)
+            
+            fill(color)
+            
+            line(width*(1/3) , 0, width*(1/3) , height)
+            line(width*(2/3) , 0, width*(2/3), height)
+            
+                if (mouseX < width*(1/3)) {
+                    rect(mouseX, mouseY, 100, 100)
+                    r += 2;  // background fades to red
+                    b = 0;
+                    g = 0;
+                    color = random(0, 84) //0, 84
+                    stroke(random(170, 255))
+                }
+                else if (mouseX > width*(2/3)) {
+                    ellipse(mouseX, mouseY, 100, 100)
+                    r = 0;
+                    b += 2; // background fades to blue
+                    g = 0;
+                    color = random(170, 255) //170, 255
+                    stroke(random(84, 169))
+                }
+                else {
+                    rect(mouseX, mouseY, 55, 100, 83, 45, 101, 100); // circular rect shape
+                    r = 0;
+                    b = 0;
+                    g += 2; //  // background fades to green
+                    color = random(84, 169) //84, 169
+                    stroke(random(0, 84))
+                }
+        }
+        r = constrain(r, 0, 255) // max # 255 = stays red
+        b = constrain(b, 0, 255) // max # 255 = stays blue
+        g = constrain(g, 0, 255) // max # 255 = stays green
+    </script>
+</head>
+
+<body>
+    <div id="code" class="container-fluid">
+        <script src="https://gist-it.appspot.com/github/emilys0766/p5js/blob/gh-pages/conditionals-project.html?footer=0"></script>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script>
+        $(window).bind("load", function() {
+            $('#code').before($('#defaultCanvas0').remove());
+        });
+    </script>
+</body>
+
+</html>
